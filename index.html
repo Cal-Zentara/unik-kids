@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kids — UNIK</title>
+  <title>Kids â€” UNIK</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -33,7 +33,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── ANNOUNCEMENT BAR ── */
+    /* â”€â”€ ANNOUNCEMENT BAR â”€â”€ */
     .announcement-bar {
       position: sticky;
       top: 0;
@@ -55,7 +55,7 @@
       letter-spacing: -0.02em;
     }
 
-    /* ── NAV ── */
+    /* â”€â”€ NAV â”€â”€ */
     nav {
       position: sticky;
       top: 40px;
@@ -122,7 +122,7 @@
 
     .nav-cta:hover .btn-arrow { transform: translate(2px, -1px) scale(1.1); }
 
-    /* ── HERO ── */
+    /* â”€â”€ HERO â”€â”€ */
     .hero {
       position: relative;
       min-height: calc(100dvh - 64px);
@@ -268,7 +268,7 @@
       color: var(--text-primary);
     }
 
-    /* ── IMAGE PANELS ── */
+    /* â”€â”€ IMAGE PANELS â”€â”€ */
     .hero-kid {
       background: #EBF6FC;
       position: relative;
@@ -336,7 +336,7 @@
       margin-top: 5px;
     }
 
-    /* ── PROOF STATS ── */
+    /* â”€â”€ PROOF STATS â”€â”€ */
     .proof {
       max-width: 1400px;
       margin: 0 auto;
@@ -375,7 +375,7 @@
       line-height: 1.5;
     }
 
-    /* ── GALLERY ── */
+    /* â”€â”€ GALLERY â”€â”€ */
     .gallery {
       padding: 96px 80px 108px;
       max-width: 1400px;
@@ -386,7 +386,175 @@
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
-      margin-bottom: 48px;
+      margin-bottom: 32px;
+    }
+
+    /* â”€â”€ COLOR + SIZE BAR â”€â”€ */
+    .uniform-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 20px 24px;
+      background: #F6F6F6;
+      border-radius: 16px;
+      margin-bottom: 40px;
+    }
+
+    .uniform-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .uniform-bar-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      white-space: nowrap;
+    }
+
+    .color-swatches {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .color-swatch {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 2px solid rgba(0,0,0,0.08);
+      cursor: default;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .color-swatch[title]:hover::after {
+      content: attr(title);
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: #0F0F0F;
+      color: #fff;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      white-space: nowrap;
+      padding: 4px 8px;
+      border-radius: 6px;
+      pointer-events: none;
+    }
+
+    .size-guide-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--accent);
+      background: none;
+      border: 1.5px solid var(--accent);
+      border-radius: 100px;
+      padding: 8px 16px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .size-guide-btn:hover { background: var(--accent); color: #fff; }
+
+    /* â”€â”€ SIZE GUIDE MODAL â”€â”€ */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 500;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-backdrop.open { display: flex; }
+
+    .modal {
+      background: #fff;
+      border-radius: 20px;
+      padding: 36px;
+      max-width: 520px;
+      width: 100%;
+      max-height: 90dvh;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #F0F0F0;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .modal-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .modal-sub {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+
+    .size-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+
+    .size-table th {
+      background: #F6F6F6;
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+
+    .size-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    .size-table tr:last-child td { border-bottom: none; }
+    .size-table td:first-child { font-weight: 800; font-size: 1rem; }
+
+    .modal-note {
+      margin-top: 16px;
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
     }
 
     .section-eyebrow {
@@ -446,7 +614,7 @@
       display: block;
     }
 
-    /* ── HOVER IMAGE SWAP ── */
+    /* â”€â”€ HOVER IMAGE SWAP â”€â”€ */
     .gallery-item-wrap {
       overflow: hidden;
       border-radius: 10px;
@@ -514,7 +682,7 @@
       padding: 16px 16px 16px 26px;
     }
 
-    /* ── FEATURES ── */
+    /* â”€â”€ FEATURES â”€â”€ */
     .features {
       background: #F4F8FB;
       padding: 96px 80px;
@@ -561,7 +729,7 @@
       line-height: 1.65;
     }
 
-    /* ── REVIEWS ── */
+    /* â”€â”€ REVIEWS â”€â”€ */
     .reviews {
       padding: 96px 80px;
       max-width: 1400px;
@@ -619,7 +787,7 @@
 
     .review-badge svg { color: var(--accent); flex-shrink: 0; }
 
-    /* ── DARK CTA ── */
+    /* â”€â”€ DARK CTA â”€â”€ */
     .cta-dark {
       background: var(--dark-bar);
       padding: 112px 80px;
@@ -672,7 +840,7 @@
     .cta-dark .cta-btn .btn-arrow { background: rgba(0,0,0,0.07); }
     .cta-dark .cta-btn:hover { background: rgba(255,255,255,0.92); }
 
-    /* ── FOOTER ── */
+    /* â”€â”€ FOOTER â”€â”€ */
     .footer { padding: 64px 80px 48px; }
 
     .footer-inner {
@@ -739,7 +907,7 @@
 
     .footer-copy { font-size: 0.8125rem; color: var(--text-secondary); }
 
-    /* ── ANIMATIONS ── */
+    /* â”€â”€ ANIMATIONS â”€â”€ */
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(28px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -774,19 +942,15 @@
       flex-shrink: 0;
     }
 
-    /* ── RESPONSIVE ── */
+    /* â”€â”€ RESPONSIVE â”€â”€ */
     @media (max-width: 768px) {
       body { cursor: auto; }
       .cursor, .cursor-dot { display: none; }
       nav { padding: 0 20px; }
       .nav-links { display: none; }
-      .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero { grid-template-columns: 1fr; }
       .hero { min-height: 90dvh; }
-      .hero-content { padding: 48px 24px; }
       .hero-content { padding: 44px 20px 60px; }
       .trust-row { flex-wrap: wrap; gap: 20px; }
-      .hero-badge { bottom: 16px; left: 16px; padding: 16px 20px; }
       .proof { padding: 48px 20px; }
       .proof-grid { grid-template-columns: 1fr; gap: 32px; }
       .proof-item { padding: 0; border-right: none; border-bottom: 1px solid var(--border); padding-bottom: 32px; }
@@ -813,14 +977,14 @@
   <!-- ANNOUNCEMENT BAR -->
   <div style="background: #1A1A1A; text-align: center; font-size: 0.875rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 13px 20px; display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;">
     <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#FF5C35; animation: urgencyPulse 1.4s ease-in-out infinite; flex-shrink:0;"></span>
-    <span style="color:#fff;">Only&nbsp;<span id="school-days" style="color:#FF5C35; font-size:1.125rem;">—</span>&nbsp;days until school</span>
-    <span style="color:rgba(255,255,255,0.3);">·</span>
-    <a href="https://www.unikusa.com/collections/uniform" style="color:#fff; text-decoration: none; font-weight: 900; border-bottom: 2px solid #FF5C35; padding-bottom: 1px; letter-spacing: 0.06em;">Shop Now →</a>
+    <span style="color:#fff;">Only&nbsp;<span id="school-days" style="color:#FF5C35; font-size:1.125rem;">â€”</span>&nbsp;days until school</span>
+    <span style="color:rgba(255,255,255,0.3);">Â·</span>
+    <a href="https://www.unikusa.com/collections/uniform" style="color:#fff; text-decoration: none; font-weight: 900; border-bottom: 2px solid #FF5C35; padding-bottom: 1px; letter-spacing: 0.06em;">Shop Now â†’</a>
   </div>
 
   <!-- ANNOUNCEMENT BAR -->
   <div class="announcement-bar">
-    🎒 Back to School is in <strong id="school-days">--</strong> days — popular sizes sell out fast
+    ðŸŽ’ Back to School is in <strong id="school-days">--</strong> days â€” popular sizes sell out fast
   </div>
 
   <!-- NAV -->
@@ -850,9 +1014,9 @@
     </video>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <span class="eyebrow"><span class="urgency-dot"></span>Don't wait · Back to School 2026</span>
+      <span class="eyebrow"><span class="urgency-dot"></span>Don't wait Â· Back to School 2026</span>
       <h1>Ready for<br>the first<br>day.</h1>
-      <p class="hero-sub">School uniforms, everyday wear, and more — sizes 4–18. Popular sizes sell out early — don't get caught waiting.</p>
+      <p class="hero-sub">School uniforms, everyday wear, and more â€” sizes 4â€“18. Popular sizes sell out early â€” don't get caught waiting.</p>
       <a href="https://www.unikusa.com/collections/uniform" class="cta-btn">
         Shop Uniforms
         <span class="btn-arrow">
@@ -886,7 +1050,7 @@
         <div class="proof-label">Amazon reviews from verified families</div>
       </div>
       <div class="proof-item">
-        <div class="proof-number" id="stat-rating">0.0<span>★</span></div>
+        <div class="proof-number" id="stat-rating">0.0<span>â˜…</span></div>
         <div class="proof-label">Average rating across all products</div>
       </div>
       <div class="proof-item">
@@ -911,6 +1075,29 @@
       </a>
     </div>
 
+    <!-- COLOR + SIZE BAR -->
+    <div class="uniform-bar">
+      <div class="uniform-bar-left">
+        <span class="uniform-bar-label">Colors</span>
+        <div class="color-swatches">
+          <div class="color-swatch" style="background:#fff;border-color:rgba(0,0,0,0.18);" title="White"></div>
+          <div class="color-swatch" style="background:#1B2A4A;" title="Navy"></div>
+          <div class="color-swatch" style="background:#7BB8D4;" title="Sky Blue"></div>
+          <div class="color-swatch" style="background:#6D1A2A;" title="Burgundy"></div>
+          <div class="color-swatch" style="background:#1A1A1A;" title="Black"></div>
+          <div class="color-swatch" style="background:#C0202A;" title="Red"></div>
+          <div class="color-swatch" style="background:#A0A0A0;" title="Grey"></div>
+          <div class="color-swatch" style="background:#1B4D2E;" title="Hunter Green"></div>
+          <div class="color-swatch" style="background:#2256B0;" title="Royal Blue"></div>
+          <div class="color-swatch" style="background:#F5C100;" title="Gold"></div>
+        </div>
+        <span class="uniform-bar-label" style="margin-left:4px;">Â· Sizes 2/3â€“18</span>
+      </div>
+      <button class="size-guide-btn" onclick="document.getElementById('sizeModal').classList.add('open')">
+        ðŸ“ Size Guide
+      </button>
+    </div>
+
     <div class="gallery-grid">
 
       <!-- TOPS -->
@@ -920,7 +1107,7 @@
           <img class="gallery-item-img secondary" src="images/BSU01 Black  (3).png" alt="Boys black polo alternate">
         </div>
         <div class="gallery-item-name">Short Sleeve Polo</div>
-        <div class="gallery-item-price">From $10.99 · 8 colors</div>
+        <div class="gallery-item-price">From $10.99 Â· 8 colors</div>
       </a>
 
       <a class="gallery-item" href="https://www.unikusa.com/collections/uniform/products/boys-uniform-polo-shirt-navy">
@@ -928,8 +1115,8 @@
           <img class="gallery-item-img primary" src="images/BSU01 Royal  (2).png" alt="Boys royal polo">
           <img class="gallery-item-img secondary" src="images/BSU01 Royal  (3).png" alt="Boys royal polo alternate">
         </div>
-        <div class="gallery-item-name">School Polo · Royal</div>
-        <div class="gallery-item-price">$14.99 · Sizes 4–18</div>
+        <div class="gallery-item-name">School Polo Â· Royal</div>
+        <div class="gallery-item-price">$14.99 Â· Sizes 4â€“18</div>
       </a>
 
       <a class="gallery-item" href="https://www.unikusa.com/collections/uniform/products/boy-uniform-polo-shirt-short-sleeve">
@@ -938,7 +1125,7 @@
           <img class="gallery-item-img secondary" src="images/BSU01 White  (2).png" alt="Boys white polo alternate">
         </div>
         <div class="gallery-item-name">White Polo</div>
-        <div class="gallery-item-price">From $12.99 · Sizes 4–18</div>
+        <div class="gallery-item-price">From $12.99 Â· Sizes 4â€“18</div>
       </a>
 
       <a class="gallery-item" href="https://www.unikusa.com/collections/uniform">
@@ -946,7 +1133,7 @@
           <img class="gallery-item-img primary" src="images/BSU01 Burgundy  (1).jpeg" alt="Boys polo shirt burgundy">
           <img class="gallery-item-img secondary" src="images/BSU01 Burgundy  (3).jpeg" alt="Boys polo shirt burgundy alternate">
         </div>
-        <div class="gallery-item-name">Polo Shirt · Burgundy</div>
+        <div class="gallery-item-name">Polo Shirt Â· Burgundy</div>
         <div class="gallery-item-price">From $10.99</div>
       </a>
 
@@ -955,7 +1142,7 @@
           <img class="gallery-item-img primary" src="images/BSU01 Light Grey  (3).jpeg" alt="Boys polo shirt light grey">
           <img class="gallery-item-img secondary" src="images/BSU01 Light Grey  (2).jpeg" alt="Boys polo shirt light grey alternate">
         </div>
-        <div class="gallery-item-name">Polo Shirt · Light Grey</div>
+        <div class="gallery-item-name">Polo Shirt Â· Light Grey</div>
         <div class="gallery-item-price">From $10.99</div>
       </a>
 
@@ -965,7 +1152,7 @@
           <img class="gallery-item-img secondary" src="images/BSU02 Skyblue 1.jpeg" alt="Boys long sleeve polo sky blue">
         </div>
         <div class="gallery-item-name">Long Sleeve Polo</div>
-        <div class="gallery-item-price">From $9.99 · 3 colors</div>
+        <div class="gallery-item-price">From $9.99 Â· 3 colors</div>
       </a>
 
       <a class="gallery-item" href="https://www.unikusa.com/collections/uniform">
@@ -973,7 +1160,7 @@
           <img class="gallery-item-img primary" src="images/BSU06 L Blue 1.jpeg" alt="Boys light blue oxford shirt">
           <img class="gallery-item-img secondary" src="images/BSU06 L Blue 2.jpeg" alt="Boys light blue long sleeve polo alternate">
         </div>
-        <div class="gallery-item-name">Oxford Shirt · Light Blue</div>
+        <div class="gallery-item-name">Oxford Shirt Â· Light Blue</div>
         <div class="gallery-item-price">From $9.99</div>
       </a>
 
@@ -982,7 +1169,7 @@
           <img class="gallery-item-img primary" src="images/BSU07 White 1.jpeg" alt="Boys long sleeve white polo">
           <img class="gallery-item-img secondary" src="images/BSU07 White 2.jpeg" alt="Boys long sleeve white polo alternate">
         </div>
-        <div class="gallery-item-name">Long Sleeve · White</div>
+        <div class="gallery-item-name">Long Sleeve Â· White</div>
         <div class="gallery-item-price">From $9.99</div>
       </a>
 
@@ -993,7 +1180,7 @@
           <img class="gallery-item-img secondary" src="images/BWU12 Navy C.png" alt="Boys zip jacket navy alternate">
         </div>
         <div class="gallery-item-name">Zip Jacket</div>
-        <div class="gallery-item-price">From $28.99 · 3 colors</div>
+        <div class="gallery-item-price">From $28.99 Â· 3 colors</div>
       </a>
 
 
@@ -1003,7 +1190,7 @@
           <img class="gallery-item-img secondary" src="images/BWU11 D Grey B.png" alt="Boys uniform hoodie dark grey alternate">
         </div>
         <div class="gallery-item-name">Uniform Hoodie</div>
-        <div class="gallery-item-price">From $26.99 · 4 colors</div>
+        <div class="gallery-item-price">From $26.99 Â· 4 colors</div>
       </a>
 
 
@@ -1013,8 +1200,8 @@
           <img class="gallery-item-img primary" src="images/BUF20 Navy (1).png" alt="Boys elastic waist uniform pants navy">
           <img class="gallery-item-img secondary" src="images/BUF20 Navy (2).png" alt="Boys elastic waist uniform pants navy alternate">
         </div>
-        <div class="gallery-item-name">Elastic Pull-On Pants · Navy</div>
-        <div class="gallery-item-price">$17.99 · 1,210+ reviews</div>
+        <div class="gallery-item-name">Elastic Pull-On Pants Â· Navy</div>
+        <div class="gallery-item-price">$17.99 Â· 1,210+ reviews</div>
       </a>
 
       <a class="gallery-item" href="https://www.unikusa.com/collections/uniform/products/boys-uniform-all-elastic-waist-pull-on-pants-4">
@@ -1022,7 +1209,7 @@
           <img class="gallery-item-img primary" src="https://cdn.shopify.com/s/files/1/0089/6840/5073/products/BU-03_khaki_clipped_rev_1_copy_70c299f8-1df1-429b-9b07-051553d88b10.jpg?v=1572545644" alt="Boys elastic waist uniform pants khaki">
           <img class="gallery-item-img secondary" src="https://cdn.shopify.com/s/files/1/0089/6840/5073/products/BU-03_khaki_clipped_rev_1_copy_70c299f8-1df1-429b-9b07-051553d88b10.jpg?v=1572545644" alt="Boys elastic waist uniform pants khaki alternate">
         </div>
-        <div class="gallery-item-name">Elastic Pull-On Pants · Khaki</div>
+        <div class="gallery-item-name">Elastic Pull-On Pants Â· Khaki</div>
         <div class="gallery-item-price">$17.99</div>
       </a>
 
@@ -1031,7 +1218,7 @@
           <img class="gallery-item-img primary" src="https://cdn.shopify.com/s/files/1/0089/6840/5073/products/BU-03_Huntergreen_front_81c5629a-29f8-4891-8585-dee36632b9cb.jpg?v=1572545634" alt="Boys elastic waist uniform pants hunter green">
           <img class="gallery-item-img secondary" src="https://cdn.shopify.com/s/files/1/0089/6840/5073/products/BU-03_Huntergreen_front_81c5629a-29f8-4891-8585-dee36632b9cb.jpg?v=1572545634" alt="Boys elastic waist uniform pants hunter green alternate">
         </div>
-        <div class="gallery-item-name">Elastic Pull-On Pants · Hunter Green</div>
+        <div class="gallery-item-name">Elastic Pull-On Pants Â· Hunter Green</div>
         <div class="gallery-item-price">$17.99</div>
       </a>
 
@@ -1040,7 +1227,7 @@
           <img class="gallery-item-img primary" src="https://cdn.shopify.com/s/files/1/0089/6840/5073/files/IMG-2668_clipped_rev_1.jpg?v=1695495906" alt="Boys elastic waist uniform pants grey">
           <img class="gallery-item-img secondary" src="https://cdn.shopify.com/s/files/1/0089/6840/5073/files/IMG-2669_clipped_rev_1.jpg?v=1695495906" alt="Boys elastic waist uniform pants grey alternate">
         </div>
-        <div class="gallery-item-name">Elastic Pull-On Pants · Grey</div>
+        <div class="gallery-item-name">Elastic Pull-On Pants Â· Grey</div>
         <div class="gallery-item-price">$17.99</div>
       </a>
 
@@ -1050,7 +1237,7 @@
           <img class="gallery-item-img secondary" src="images/BU03 Navy 2.jpeg" alt="Boys uniform pants navy alternate">
         </div>
         <div class="gallery-item-name">Uniform Pants</div>
-        <div class="gallery-item-price">From $17.99 · 5 colors</div>
+        <div class="gallery-item-price">From $17.99 Â· 5 colors</div>
       </a>
 
       <a class="gallery-item" href="https://www.unikusa.com/collections/boys/products/boy-uniform-skinny-fit-pants">
@@ -1059,7 +1246,7 @@
           <img class="gallery-item-img secondary" src="images/JG05 Khaki (2).png" alt="Boys jogger pants khaki alternate">
         </div>
         <div class="gallery-item-name">Jogger Pants</div>
-        <div class="gallery-item-price">From $19.99 · 3 colors</div>
+        <div class="gallery-item-price">From $19.99 Â· 3 colors</div>
       </a>
 
       <a class="gallery-item" href="https://www.unikusa.com/collections/uniform/products/boys-all-elastic-waist-pull-up-shorts">
@@ -1068,7 +1255,7 @@
           <img class="gallery-item-img secondary" src="images/SBU32 Khaki 2.jpeg" alt="Boys pull-on shorts khaki alternate">
         </div>
         <div class="gallery-item-name">Pull-On Shorts</div>
-        <div class="gallery-item-price">From $16.99 · 6 colors</div>
+        <div class="gallery-item-price">From $16.99 Â· 6 colors</div>
       </a>
 
       <a class="gallery-item" href="https://www.unikusa.com/collections/uniform/products/boy-uniform-shorts-with-adjustable-waist-1">
@@ -1077,7 +1264,7 @@
           <img class="gallery-item-img secondary" src="images/BCF22 Navy 2.jpeg" alt="Boys uniform cargo shorts navy alternate">
         </div>
         <div class="gallery-item-name">Cargo Shorts</div>
-        <div class="gallery-item-price">From $18.99 · 4 colors</div>
+        <div class="gallery-item-price">From $18.99 Â· 4 colors</div>
       </a>
 
       <!-- SETS -->
@@ -1086,8 +1273,8 @@
           <img class="gallery-item-img primary" src="images/BS2480 Navy A.jpeg" alt="Boys short set navy">
           <img class="gallery-item-img secondary" src="images/BS2480 Navy B.jpeg" alt="Boys short set navy alternate">
         </div>
-        <div class="gallery-item-name">Short Set · Navy</div>
-        <div class="gallery-item-price">From $22.99 · Polo + shorts</div>
+        <div class="gallery-item-name">Short Set Â· Navy</div>
+        <div class="gallery-item-price">From $22.99 Â· Polo + shorts</div>
       </a>
 
       <a class="gallery-item" href="https://www.unikusa.com/collections/boys/Boys-All">
@@ -1095,8 +1282,8 @@
           <img class="gallery-item-img primary" src="images/BS22602 Royal A.jpeg" alt="Boys short set royal blue">
           <img class="gallery-item-img secondary" src="images/BS22602 Royal B.jpeg" alt="Boys short set royal blue alternate">
         </div>
-        <div class="gallery-item-name">Short Set · Royal</div>
-        <div class="gallery-item-price">From $22.99 · 4 colors</div>
+        <div class="gallery-item-name">Short Set Â· Royal</div>
+        <div class="gallery-item-price">From $22.99 Â· 4 colors</div>
       </a>
 
     </div>
@@ -1138,7 +1325,7 @@
           <img class="gallery-item-img secondary" src="images/BW2585 Black A.png" alt="Boys fleece hoodie black alternate">
         </div>
         <div class="gallery-item-name">Fleece Hoodie</div>
-        <div class="gallery-item-price">$15.99 · 3 colors</div>
+        <div class="gallery-item-price">$15.99 Â· 3 colors</div>
       </a>
 
       <a class="gallery-item" href="https://www.unikusa.com/collections/boys/products/boys-fleece-crew-neck-1">
@@ -1147,7 +1334,7 @@
           <img class="gallery-item-img secondary" src="images/BW2580 D Grey A.png" alt="Boys fleece crew neck grey">
         </div>
         <div class="gallery-item-name">Fleece Crew Neck</div>
-        <div class="gallery-item-price">$15.99 · 3 colors</div>
+        <div class="gallery-item-price">$15.99 Â· 3 colors</div>
       </a>
 
       <a class="gallery-item" href="https://www.unikusa.com/collections/boys/products/boys-windbreaker-jacket">
@@ -1156,7 +1343,7 @@
           <img class="gallery-item-img secondary" src="images/BW2460 Navy 2.jpeg" alt="Boys windbreaker jacket navy alternate">
         </div>
         <div class="gallery-item-name">Windbreaker Jacket</div>
-        <div class="gallery-item-price">$22.99 · Fleece lined</div>
+        <div class="gallery-item-price">$22.99 Â· Fleece lined</div>
       </a>
 
       <a class="gallery-item" href="https://www.unikusa.com/collections/boys/products/boy-varsity-jacket">
@@ -1165,7 +1352,7 @@
           <img class="gallery-item-img secondary" src="images/BW2460 Charcoal 2.jpeg" alt="Boys varsity jacket charcoal alternate">
         </div>
         <div class="gallery-item-name">Varsity Jacket</div>
-        <div class="gallery-item-price">$22.99 · Snap closure</div>
+        <div class="gallery-item-price">$22.99 Â· Snap closure</div>
       </a>
 
       <a class="gallery-item" href="https://www.unikusa.com/collections/boys/products/soccer-tracksuit">
@@ -1173,8 +1360,8 @@
           <img class="gallery-item-img primary" src="images/BW2342 Navy 1.jpeg" alt="Boys tracksuit navy">
           <img class="gallery-item-img secondary" src="images/BW2342 Navy 2.jpeg" alt="Boys tracksuit navy alternate">
         </div>
-        <div class="gallery-item-name">Fleece Tracksuit · Navy</div>
-        <div class="gallery-item-price">$25.00 · Jacket + pants</div>
+        <div class="gallery-item-name">Fleece Tracksuit Â· Navy</div>
+        <div class="gallery-item-price">$25.00 Â· Jacket + pants</div>
       </a>
 
       <a class="gallery-item" href="https://www.unikusa.com/collections/boys/products/boy-champ-07-tracksuit">
@@ -1182,8 +1369,8 @@
           <img class="gallery-item-img primary" src="images/BW2344 Royal 1.jpeg" alt="Boys tracksuit royal">
           <img class="gallery-item-img secondary" src="images/BW2344 Royal 2.jpeg" alt="Boys tracksuit royal alternate">
         </div>
-        <div class="gallery-item-name">Fleece Tracksuit · Royal</div>
-        <div class="gallery-item-price">$25.00 · Jacket + pants</div>
+        <div class="gallery-item-name">Fleece Tracksuit Â· Royal</div>
+        <div class="gallery-item-price">$25.00 Â· Jacket + pants</div>
       </a>
 
       <a class="gallery-item" href="https://www.unikusa.com/collections/boys/products/boys-basketball-all-star">
@@ -1191,8 +1378,8 @@
           <img class="gallery-item-img primary" src="images/BW2343 Black 1.jpeg" alt="Boys fleece set black">
           <img class="gallery-item-img secondary" src="images/BW2343 Black 2.jpeg" alt="Boys fleece set black alternate">
         </div>
-        <div class="gallery-item-name">Fleece Set · Black</div>
-        <div class="gallery-item-price">$25.00 · Jacket + pants</div>
+        <div class="gallery-item-name">Fleece Set Â· Black</div>
+        <div class="gallery-item-price">$25.00 Â· Jacket + pants</div>
       </a>
 
       <a class="gallery-item" href="https://www.unikusa.com/collections/boys/products/boy-zipper-hooded-puffer-jacket">
@@ -1201,7 +1388,7 @@
           <img class="gallery-item-img secondary" src="images/BJ2077 Navy 2.jpeg" alt="Boys puffer jacket navy alternate">
         </div>
         <div class="gallery-item-name">Puffer Jacket</div>
-        <div class="gallery-item-price">$29.99 · Water resistant</div>
+        <div class="gallery-item-price">$29.99 Â· Water resistant</div>
       </a>
 
       <a class="gallery-item" href="https://www.unikusa.com/collections/boys/products/boys-fleece-hoodie-1">
@@ -1210,7 +1397,7 @@
           <img class="gallery-item-img secondary" src="images/KBT65 Navy B.jpeg" alt="Boys California fleece zip jacket navy alternate">
         </div>
         <div class="gallery-item-name">Graphic Zip Hoodie</div>
-        <div class="gallery-item-price">From $32.99 · 4 colors</div>
+        <div class="gallery-item-price">From $32.99 Â· 4 colors</div>
       </a>
 
     </div>
@@ -1250,7 +1437,7 @@
               <path d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"/>
             </svg>
           </div>
-          <div class="feature-heading">Sizes 4–18</div>
+          <div class="feature-heading">Sizes 4â€“18</div>
           <div class="feature-text">From kindergarten through high school.</div>
         </div>
         <div class="feature-item">
@@ -1287,35 +1474,35 @@
     </div>
     <div class="reviews-grid">
       <div class="review-card">
-        <div class="review-stars">★★★★★</div>
+        <div class="review-stars">â˜…â˜…â˜…â˜…â˜…</div>
         <p class="review-text">"Highly suggest for sensory kids! My son has some sensory issues with clothes and thankfully these check all the boxes. Not too tight, not itchy, very soft on the inside. Holding up very well through the laundry and playing hard at school."</p>
         <div class="review-author">
           <span class="review-name">Francie</span>
           <span class="review-badge">
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M10 3L4.5 8.5 2 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Verified Amazon Purchase · Elastic Waist Pants
+            Verified Amazon Purchase Â· Elastic Waist Pants
           </span>
         </div>
       </div>
       <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"These pants are perfect. Soft and high quality. No button and zipper in front — very nice for lazy kids."</p>
+        <div class="review-stars">â˜…â˜…â˜…â˜…â˜…</div>
+        <p class="review-text">"These pants are perfect. Soft and high quality. No button and zipper in front â€” very nice for lazy kids."</p>
         <div class="review-author">
           <span class="review-name">Yiluan Chen</span>
           <span class="review-badge">
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M10 3L4.5 8.5 2 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Verified Amazon Purchase · Elastic Waist Pants
+            Verified Amazon Purchase Â· Elastic Waist Pants
           </span>
         </div>
       </div>
       <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Son perfectos y duraderos — excellente material. Para mi niño en la escuela, no se complica en quitar botón o el cierre. Son elásticos, es ideal para ellos."</p>
+        <div class="review-stars">â˜…â˜…â˜…â˜…â˜…</div>
+        <p class="review-text">"Son perfectos y duraderos â€” excellente material. Para mi niÃ±o en la escuela, no se complica en quitar botÃ³n o el cierre. Son elÃ¡sticos, es ideal para ellos."</p>
         <div class="review-author">
           <span class="review-name">Ilse Perez</span>
           <span class="review-badge">
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M10 3L4.5 8.5 2 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Verified Amazon Purchase · Elastic Waist Pants
+            Verified Amazon Purchase Â· Elastic Waist Pants
           </span>
         </div>
       </div>
@@ -1326,7 +1513,7 @@
   <section class="cta-dark">
     <div class="cta-dark-inner">
       <h2>Back to school<br>starts now.</h2>
-      <p>Free shipping on all orders over $35.<br>Sizes 4–18 in stock and ready to ship.</p>
+      <p>Free shipping on all orders over $35.<br>Sizes 4â€“18 in stock and ready to ship.</p>
       <a href="https://www.unikusa.com/collections/uniform" class="cta-btn">
         Shop the Full Collection
         <span class="btn-arrow">
@@ -1373,28 +1560,28 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span class="footer-copy">© 2026 Unik Inc. All rights reserved.</span>
-      <span class="footer-copy">Los Angeles, CA · unikusa.com</span>
+      <span class="footer-copy">Â© 2026 Unik Inc. All rights reserved.</span>
+      <span class="footer-copy">Los Angeles, CA Â· unikusa.com</span>
     </div>
   </footer>
 
   <script>
     gsap.registerPlugin(ScrollTrigger);
 
-    // ── LENIS SMOOTH SCROLL ──
+    // â”€â”€ LENIS SMOOTH SCROLL â”€â”€
     const lenis = new Lenis({ duration: 1.4, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
     lenis.on('scroll', ScrollTrigger.update);
     gsap.ticker.add((time) => lenis.raf(time * 1000));
     gsap.ticker.lagSmoothing(0);
 
-    // ── HERO PARALLAX ──
+    // â”€â”€ HERO VIDEO PARALLAX â”€â”€
     gsap.to('.hero-video', {
       scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1.8 },
       y: 40,
       ease: 'none'
     });
 
-    // ── PROOF STATS ──
+    // â”€â”€ PROOF STATS â”€â”€
     gsap.from('.proof-item', {
       scrollTrigger: { trigger: '.proof', start: 'top 82%' },
       y: 36,
@@ -1404,7 +1591,7 @@
       ease: 'power3.out'
     });
 
-    // ── COUNT-UP ANIMATION ──
+    // â”€â”€ COUNT-UP ANIMATION â”€â”€
     ScrollTrigger.create({
       trigger: '.proof',
       start: 'top 80%',
@@ -1431,10 +1618,10 @@
           duration: 2.8,
           ease: 'power2.out',
           onUpdate: function() {
-            elRating.innerHTML = this.targets()[0].val.toFixed(1) + '<span>★</span>';
+            elRating.innerHTML = this.targets()[0].val.toFixed(1) + '<span>â˜…</span>';
           },
           onComplete: function() {
-            elRating.innerHTML = '4.2<span>★</span>';
+            elRating.innerHTML = '4.2<span>â˜…</span>';
           }
         });
 
@@ -1452,7 +1639,7 @@
       }
     });
 
-    // ── GALLERY HEADER ──
+    // â”€â”€ GALLERY HEADER â”€â”€
     gsap.from('.gallery-header', {
       scrollTrigger: { trigger: '.gallery-header', start: 'top 85%' },
       y: 28,
@@ -1461,7 +1648,7 @@
       ease: 'power3.out'
     });
 
-    // ── GALLERY ITEMS ──
+    // â”€â”€ GALLERY ITEMS â”€â”€
     gsap.from('.gallery-item', {
       scrollTrigger: { trigger: '.gallery-grid', start: 'top 82%' },
       y: 48,
@@ -1471,7 +1658,7 @@
       ease: 'power3.out'
     });
 
-    // ── GALLERY CTA ──
+    // â”€â”€ GALLERY CTA â”€â”€
     gsap.from('.gallery-cta', {
       scrollTrigger: { trigger: '.gallery-cta', start: 'top 90%' },
       y: 20,
@@ -1480,7 +1667,7 @@
       ease: 'power3.out'
     });
 
-    // ── FEATURES ──
+    // â”€â”€ FEATURES â”€â”€
     gsap.from('.features-header', {
       scrollTrigger: { trigger: '.features-header', start: 'top 85%' },
       y: 28,
@@ -1498,7 +1685,7 @@
       ease: 'power3.out'
     });
 
-    // ── REVIEWS ──
+    // â”€â”€ REVIEWS â”€â”€
     gsap.from('.reviews-header', {
       scrollTrigger: { trigger: '.reviews-header', start: 'top 85%' },
       y: 28,
@@ -1517,7 +1704,7 @@
     });
 
 
-    // ── SCHOOL COUNTDOWN ──
+    // â”€â”€ SCHOOL COUNTDOWN â”€â”€
     (function() {
       const schoolDate = new Date('2026-08-18T00:00:00');
       const today = new Date();
@@ -1527,7 +1714,7 @@
       if (el) el.textContent = days;
     })();
 
-    // ── DARK CTA ──
+    // â”€â”€ DARK CTA â”€â”€
     gsap.from('.cta-dark-inner', {
       scrollTrigger: { trigger: '.cta-dark', start: 'top 80%' },
       y: 36,
@@ -1537,6 +1724,38 @@
     });
 
   </script>
+
+  <!-- SIZE GUIDE MODAL -->
+  <div class="modal-backdrop" id="sizeModal" onclick="if(event.target===this)this.classList.remove('open')">
+    <div class="modal">
+      <button class="modal-close" onclick="document.getElementById('sizeModal').classList.remove('open')">âœ•</button>
+      <div class="modal-title">Size Guide â€” Boys' Uniforms</div>
+      <div class="modal-sub">Measure your child's chest and height for the best fit. When between sizes, size up.</div>
+      <table class="size-table">
+        <thead>
+          <tr>
+            <th>Size</th>
+            <th>Age</th>
+            <th>Height</th>
+            <th>Chest</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>2/3</td><td>2â€“3 yrs</td><td>34â€“38"</td><td>21â€“22"</td></tr>
+          <tr><td>4</td><td>3â€“4 yrs</td><td>39â€“41"</td><td>22â€“23"</td></tr>
+          <tr><td>5</td><td>4â€“5 yrs</td><td>42â€“44"</td><td>23â€“24"</td></tr>
+          <tr><td>6</td><td>5â€“6 yrs</td><td>45â€“47"</td><td>24â€“25"</td></tr>
+          <tr><td>8</td><td>7â€“8 yrs</td><td>50â€“52"</td><td>26â€“27"</td></tr>
+          <tr><td>10</td><td>8â€“9 yrs</td><td>53â€“55"</td><td>27â€“28"</td></tr>
+          <tr><td>12</td><td>10â€“11 yrs</td><td>56â€“58"</td><td>29â€“30"</td></tr>
+          <tr><td>14</td><td>12â€“13 yrs</td><td>59â€“61"</td><td>30â€“31"</td></tr>
+          <tr><td>16</td><td>13â€“14 yrs</td><td>61â€“63"</td><td>32â€“33"</td></tr>
+          <tr><td>18</td><td>14â€“15 yrs</td><td>63â€“65"</td><td>33â€“34"</td></tr>
+        </tbody>
+      </table>
+      <p class="modal-note">ðŸ’¡ <strong>Tip:</strong> For polos, measure around the fullest part of the chest. For pants, measure the natural waist. If your child is between sizes, we recommend sizing up for room to grow.</p>
+    </div>
+  </div>
 
 </body>
 </html>
