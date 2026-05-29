@@ -672,6 +672,34 @@
       pointer-events: none;
     }
 
+    /* ── SWATCH PRODUCT CARD ── */
+    .product-card { position: relative; }
+    .product-card-link { text-decoration: none; color: inherit; display: block; }
+
+    /* swatch cards have one image — keep it fully opaque, just zoom on hover */
+    .product-card:hover .gallery-item-img.primary { transform: scale(1.04); opacity: 1; }
+
+    .card-swatches {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .card-swatch {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(0,0,0,0.12);
+      padding: 0;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: transform 0.15s cubic-bezier(0.32,0.72,0,1), box-shadow 0.15s;
+    }
+
+    .card-swatch:hover { transform: scale(1.18); }
+    .card-swatch.active { box-shadow: 0 0 0 2px #fff, 0 0 0 3.5px var(--text-primary); }
+
     .gallery-cta {
       text-align: center;
       padding-top: 56px;
@@ -1101,50 +1129,22 @@
     <div class="gallery-grid">
 
       <!-- TOPS -->
-      <a class="gallery-item" href="https://www.unikusa.com/collections/uniform/products/boy-uniform-polo-shirt-black">
-        <div class="gallery-item-wrap">
-          <img class="gallery-item-img primary" src="images/BSU01 Black.jpeg" alt="Boys black short sleeve polo">
-          <img class="gallery-item-img secondary" src="images/BSU01 Black  (3).png" alt="Boys black polo alternate">
+      <div class="gallery-item product-card">
+        <a class="product-card-link" href="https://www.unikusa.com/collections/uniform/products/boy-uniform-polo-shirt-short-sleeve">
+          <div class="gallery-item-wrap">
+            <img class="gallery-item-img primary" src="images/BSU01 White  (1).png" alt="Boys short sleeve polo">
+          </div>
+        </a>
+        <div class="gallery-item-name">Short Sleeve Polo · <span class="card-color-label">White</span></div>
+        <div class="gallery-item-price">From $12.99 · 10 colors · Sizes 2/3–18</div>
+        <div class="card-swatches">
+          <button class="card-swatch active" style="background:#fff;border-color:rgba(0,0,0,0.2);" title="White" data-img="images/BSU01 White  (1).png" data-url="https://www.unikusa.com/collections/uniform/products/boy-uniform-polo-shirt-short-sleeve"></button>
+          <button class="card-swatch" style="background:#1A1A1A;" title="Black" data-img="images/BSU01 Black.jpeg" data-url="https://www.unikusa.com/collections/uniform/products/boys-premium-quality-pique-polo-uniform-shirt-short-sleeve-black-5-18-bsu01"></button>
+          <button class="card-swatch" style="background:#2256B0;" title="Royal Blue" data-img="images/BSU01 Royal  (2).png" data-url="https://www.unikusa.com/collections/uniform/products/boys-premium-quality-pique-polo-uniform-shirt-short-sleeve-royal-blue-5-18-bsu01"></button>
+          <button class="card-swatch" style="background:#6D1A2A;" title="Burgundy" data-img="images/BSU01 Burgundy  (1).jpeg" data-url="https://www.unikusa.com/collections/uniform/products/boys-uniform-polo-shirt-burgundy-5-18-bsu01"></button>
+          <button class="card-swatch" style="background:#A0A0A0;" title="Light Grey" data-img="images/BSU01 Light Grey  (3).jpeg" data-url="https://www.unikusa.com/collections/uniform/products/boys-premium-quality-pique-polo-uniform-shirt-short-sleeve-light-grey-5-18-bsu01"></button>
         </div>
-        <div class="gallery-item-name">Short Sleeve Polo</div>
-        <div class="gallery-item-price">From $10.99 · 8 colors</div>
-      </a>
-
-      <a class="gallery-item" href="https://www.unikusa.com/collections/uniform/products/boys-uniform-polo-shirt-navy">
-        <div class="gallery-item-wrap">
-          <img class="gallery-item-img primary" src="images/BSU01 Royal  (2).png" alt="Boys royal polo">
-          <img class="gallery-item-img secondary" src="images/BSU01 Royal  (3).png" alt="Boys royal polo alternate">
-        </div>
-        <div class="gallery-item-name">School Polo · Royal</div>
-        <div class="gallery-item-price">$14.99 · Sizes 4–18</div>
-      </a>
-
-      <a class="gallery-item" href="https://www.unikusa.com/collections/uniform/products/boy-uniform-polo-shirt-short-sleeve">
-        <div class="gallery-item-wrap">
-          <img class="gallery-item-img primary" src="images/BSU01 White  (1).png" alt="Boys white polo">
-          <img class="gallery-item-img secondary" src="images/BSU01 White  (2).png" alt="Boys white polo alternate">
-        </div>
-        <div class="gallery-item-name">White Polo</div>
-        <div class="gallery-item-price">From $12.99 · Sizes 4–18</div>
-      </a>
-
-      <a class="gallery-item" href="https://www.unikusa.com/collections/uniform">
-        <div class="gallery-item-wrap">
-          <img class="gallery-item-img primary" src="images/BSU01 Burgundy  (1).jpeg" alt="Boys polo shirt burgundy">
-          <img class="gallery-item-img secondary" src="images/BSU01 Burgundy  (3).jpeg" alt="Boys polo shirt burgundy alternate">
-        </div>
-        <div class="gallery-item-name">Polo Shirt · Burgundy</div>
-        <div class="gallery-item-price">From $10.99</div>
-      </a>
-
-      <a class="gallery-item" href="https://www.unikusa.com/collections/uniform">
-        <div class="gallery-item-wrap">
-          <img class="gallery-item-img primary" src="images/BSU01 Light Grey  (3).jpeg" alt="Boys polo shirt light grey">
-          <img class="gallery-item-img secondary" src="images/BSU01 Light Grey  (2).jpeg" alt="Boys polo shirt light grey alternate">
-        </div>
-        <div class="gallery-item-name">Polo Shirt · Light Grey</div>
-        <div class="gallery-item-price">From $10.99</div>
-      </a>
+      </div>
 
       <a class="gallery-item" href="https://www.unikusa.com/collections/uniform/products/boys-long-sleeve-uniform-shirt-2">
         <div class="gallery-item-wrap">
@@ -1202,79 +1202,53 @@
       </a>
     </div>
 
-    <div class="uniform-bar" style="flex-direction:column; align-items:flex-start; gap:14px;">
+    <div class="uniform-bar">
       <div class="uniform-bar-left">
-        <span class="uniform-bar-label">Shorts</span>
-        <div class="color-swatches">
-          <div class="color-swatch" style="background:#C8B08A;" title="Khaki"></div>
-          <div class="color-swatch" style="background:#1B2A4A;" title="Navy"></div>
-          <div class="color-swatch" style="background:#1A1A1A;" title="Black"></div>
-          <div class="color-swatch" style="background:#1B4D2E;" title="Hunter Green"></div>
-          <div class="color-swatch" style="background:#A0A0A0;" title="Grey"></div>
-          <div class="color-swatch" style="background:#3A6EA8;" title="Blue"></div>
-        </div>
-        <span class="uniform-bar-label" style="margin-left:4px;">· Sizes 4–16</span>
+        <span class="uniform-bar-label">Tap a color on any item to preview it · Sizes 4–16</span>
       </div>
-      <div class="uniform-bar-left">
-        <span class="uniform-bar-label">Pants&nbsp;&nbsp;</span>
-        <div class="color-swatches">
-          <div class="color-swatch" style="background:#C8B08A;" title="Khaki"></div>
-          <div class="color-swatch" style="background:#1B2A4A;" title="Navy"></div>
-          <div class="color-swatch" style="background:#1A1A1A;" title="Black"></div>
-          <div class="color-swatch" style="background:#A0A0A0;" title="Grey"></div>
-        </div>
-        <span class="uniform-bar-label" style="margin-left:4px;">· Sizes 4–16</span>
-      </div>
+      <button class="size-guide-btn" onclick="document.getElementById('sizeModal').classList.add('open')">
+        📏 Size Guide
+      </button>
     </div>
 
     <div class="gallery-grid">
 
-      <!-- BOTTOMS -->
-      <a class="gallery-item" href="https://www.unikusa.com/collections/uniform/products/boys-uniform-all-elastic-waist-pull-on-pants-1">
-        <div class="gallery-item-wrap">
-          <img class="gallery-item-img primary" src="images/BUF20 Navy (1).png" alt="Boys elastic waist uniform pants navy">
-          <img class="gallery-item-img secondary" src="images/BUF20 Navy (2).png" alt="Boys elastic waist uniform pants navy alternate">
+      <!-- ELASTIC PULL-ON PANTS (BU03) — bestseller -->
+      <div class="gallery-item product-card">
+        <a class="product-card-link" href="https://www.unikusa.com/collections/uniform/products/boys-uniform-all-elastic-waist-pull-on-pants-1">
+          <div class="gallery-item-wrap">
+            <span class="gallery-item-badge">1,210+ reviews</span>
+            <img class="gallery-item-img primary" src="images/BUF20 Navy (1).png" alt="Boys elastic waist uniform pants">
+          </div>
+        </a>
+        <div class="gallery-item-name">Elastic Pull-On Pants · <span class="card-color-label">Navy</span></div>
+        <div class="gallery-item-price">$17.99 · 4 colors · Sizes 4–16</div>
+        <div class="card-swatches">
+          <button class="card-swatch active" style="background:#1B2A4A;" title="Navy" data-img="images/BUF20 Navy (1).png" data-url="https://www.unikusa.com/collections/uniform/products/boys-uniform-all-elastic-waist-pull-on-pants-1"></button>
+          <button class="card-swatch" style="background:#C8B08A;" title="Khaki" data-img="https://cdn.shopify.com/s/files/1/0089/6840/5073/products/BU-03_khaki_clipped_rev_1_copy_70c299f8-1df1-429b-9b07-051553d88b10.jpg?v=1572545644" data-url="https://www.unikusa.com/collections/uniform/products/boys-uniform-all-elastic-waist-pull-on-pants-4"></button>
+          <button class="card-swatch" style="background:#1B4D2E;" title="Hunter Green" data-img="https://cdn.shopify.com/s/files/1/0089/6840/5073/products/BU-03_Huntergreen_front_81c5629a-29f8-4891-8585-dee36632b9cb.jpg?v=1572545634" data-url="https://www.unikusa.com/collections/uniform/products/boys-uniform-all-elastic-waist-pull-on-pants-3"></button>
+          <button class="card-swatch" style="background:#A0A0A0;" title="Grey" data-img="https://cdn.shopify.com/s/files/1/0089/6840/5073/files/IMG-2668_clipped_rev_1.jpg?v=1695495906" data-url="https://www.unikusa.com/collections/uniform/products/boys-uniform-all-elastic-waist-pull-on-pants"></button>
         </div>
-        <div class="gallery-item-name">Elastic Pull-On Pants · Navy</div>
-        <div class="gallery-item-price">$17.99 · 1,210+ reviews</div>
-      </a>
+      </div>
 
-      <a class="gallery-item" href="https://www.unikusa.com/collections/uniform/products/boys-uniform-all-elastic-waist-pull-on-pants-4">
-        <div class="gallery-item-wrap">
-          <img class="gallery-item-img primary" src="https://cdn.shopify.com/s/files/1/0089/6840/5073/products/BU-03_khaki_clipped_rev_1_copy_70c299f8-1df1-429b-9b07-051553d88b10.jpg?v=1572545644" alt="Boys elastic waist uniform pants khaki">
-          <img class="gallery-item-img secondary" src="https://cdn.shopify.com/s/files/1/0089/6840/5073/products/BU-03_khaki_clipped_rev_1_copy_70c299f8-1df1-429b-9b07-051553d88b10.jpg?v=1572545644" alt="Boys elastic waist uniform pants khaki alternate">
+      <!-- FLAT FRONT PANTS (BU02) -->
+      <div class="gallery-item product-card">
+        <a class="product-card-link" href="https://www.unikusa.com/collections/uniform">
+          <div class="gallery-item-wrap">
+            <img class="gallery-item-img primary" src="images/BU02 Khaki 1.png" alt="Boys flat front uniform pants">
+          </div>
+        </a>
+        <div class="gallery-item-name">Flat Front Pants · <span class="card-color-label">Khaki</span></div>
+        <div class="gallery-item-price">$18.99 · 4 colors · Adjustable waist</div>
+        <div class="card-swatches">
+          <button class="card-swatch active" style="background:#C8B08A;" title="Khaki" data-img="images/BU02 Khaki 1.png" data-url="https://www.unikusa.com/collections/uniform"></button>
+          <button class="card-swatch" style="background:#1B2A4A;" title="Navy" data-img="images/BU02 Navy 1.png" data-url="https://www.unikusa.com/collections/uniform"></button>
+          <button class="card-swatch" style="background:#1A1A1A;" title="Black" data-img="images/BU02 Black 1.png" data-url="https://www.unikusa.com/collections/uniform"></button>
+          <button class="card-swatch" style="background:#A0A0A0;" title="Grey" data-img="images/BU02 Grey 1.jpeg" data-url="https://www.unikusa.com/collections/uniform"></button>
         </div>
-        <div class="gallery-item-name">Elastic Pull-On Pants · Khaki</div>
-        <div class="gallery-item-price">$17.99</div>
-      </a>
+      </div>
 
-      <a class="gallery-item" href="https://www.unikusa.com/collections/uniform/products/boys-uniform-all-elastic-waist-pull-on-pants-3">
-        <div class="gallery-item-wrap">
-          <img class="gallery-item-img primary" src="https://cdn.shopify.com/s/files/1/0089/6840/5073/products/BU-03_Huntergreen_front_81c5629a-29f8-4891-8585-dee36632b9cb.jpg?v=1572545634" alt="Boys elastic waist uniform pants hunter green">
-          <img class="gallery-item-img secondary" src="https://cdn.shopify.com/s/files/1/0089/6840/5073/products/BU-03_Huntergreen_front_81c5629a-29f8-4891-8585-dee36632b9cb.jpg?v=1572545634" alt="Boys elastic waist uniform pants hunter green alternate">
-        </div>
-        <div class="gallery-item-name">Elastic Pull-On Pants · Hunter Green</div>
-        <div class="gallery-item-price">$17.99</div>
-      </a>
-
-      <a class="gallery-item" href="https://www.unikusa.com/collections/uniform/products/boys-uniform-all-elastic-waist-pull-on-pants">
-        <div class="gallery-item-wrap">
-          <img class="gallery-item-img primary" src="https://cdn.shopify.com/s/files/1/0089/6840/5073/files/IMG-2668_clipped_rev_1.jpg?v=1695495906" alt="Boys elastic waist uniform pants grey">
-          <img class="gallery-item-img secondary" src="https://cdn.shopify.com/s/files/1/0089/6840/5073/files/IMG-2669_clipped_rev_1.jpg?v=1695495906" alt="Boys elastic waist uniform pants grey alternate">
-        </div>
-        <div class="gallery-item-name">Elastic Pull-On Pants · Grey</div>
-        <div class="gallery-item-price">$17.99</div>
-      </a>
-
-      <a class="gallery-item" href="https://www.unikusa.com/collections/uniform/products/boys-uniform-twill-pants-flat-front-pants-2">
-        <div class="gallery-item-wrap">
-          <img class="gallery-item-img primary" src="images/BU03 Navy 1.jpeg" alt="Boys uniform pants navy">
-          <img class="gallery-item-img secondary" src="images/BU03 Navy 2.jpeg" alt="Boys uniform pants navy alternate">
-        </div>
-        <div class="gallery-item-name">Uniform Pants</div>
-        <div class="gallery-item-price">From $17.99 · 5 colors</div>
-      </a>
-
+      <!-- JOGGER PANTS (JG05) -->
       <a class="gallery-item" href="https://www.unikusa.com/collections/boys/products/boy-uniform-skinny-fit-pants">
         <div class="gallery-item-wrap">
           <img class="gallery-item-img primary" src="images/JG05 Khaki (1).png" alt="Boys jogger pants khaki">
@@ -1284,105 +1258,36 @@
         <div class="gallery-item-price">From $19.99 · 3 colors</div>
       </a>
 
-      <a class="gallery-item" href="https://www.unikusa.com/collections/uniform">
-        <div class="gallery-item-wrap">
-          <img class="gallery-item-img primary" src="images/BU02 Khaki 1.png" alt="Boys flat front uniform pants khaki">
-          <img class="gallery-item-img secondary" src="images/BU02 Khaki 2.png" alt="Boys flat front uniform pants khaki alternate">
-        </div>
-        <div class="gallery-item-name">Flat Front Pants · Khaki</div>
-        <div class="gallery-item-price">$18.99 · Adjustable waist</div>
-      </a>
-
-      <a class="gallery-item" href="https://www.unikusa.com/collections/uniform">
-        <div class="gallery-item-wrap">
-          <img class="gallery-item-img primary" src="images/BU02 Navy 1.png" alt="Boys flat front uniform pants navy">
-          <img class="gallery-item-img secondary" src="images/BU02 Navy 2.png" alt="Boys flat front uniform pants navy alternate">
-        </div>
-        <div class="gallery-item-name">Flat Front Pants · Navy</div>
-        <div class="gallery-item-price">$18.99 · Adjustable waist</div>
-      </a>
-
-      <a class="gallery-item" href="https://www.unikusa.com/collections/uniform">
-        <div class="gallery-item-wrap">
-          <img class="gallery-item-img primary" src="images/BU02 Black 1.png" alt="Boys flat front uniform pants black">
-          <img class="gallery-item-img secondary" src="images/BU02 Black 2.png" alt="Boys flat front uniform pants black alternate">
-        </div>
-        <div class="gallery-item-name">Flat Front Pants · Black</div>
-        <div class="gallery-item-price">$18.99 · Adjustable waist</div>
-      </a>
-
-      <a class="gallery-item" href="https://www.unikusa.com/collections/uniform">
-        <div class="gallery-item-wrap">
-          <img class="gallery-item-img primary" src="images/BU02 Grey 1.jpeg" alt="Boys flat front uniform pants grey">
-          <img class="gallery-item-img secondary" src="images/BU02 Grey 2.jpeg" alt="Boys flat front uniform pants grey alternate">
-        </div>
-        <div class="gallery-item-name">Flat Front Pants · Grey</div>
-        <div class="gallery-item-price">$18.99 · Adjustable waist</div>
-      </a>
-
+      <!-- CARGO JOGGER (CG04) -->
       <a class="gallery-item" href="https://www.unikusa.com/collections/uniform">
         <div class="gallery-item-wrap">
           <img class="gallery-item-img primary" src="images/CG04 Black 1.jpg" alt="Boys cargo jogger pants black">
           <img class="gallery-item-img secondary" src="images/CG04 Black 2.jpg" alt="Boys cargo jogger pants black alternate">
         </div>
-        <div class="gallery-item-name">Cargo Jogger Pants</div>
-        <div class="gallery-item-price">$17.99 · Black</div>
+        <div class="gallery-item-name">Cargo Jogger Pants · Black</div>
+        <div class="gallery-item-price">$17.99 · Sizes 4–16</div>
       </a>
 
-      <a class="gallery-item" href="https://www.unikusa.com/collections/uniform/products/boys-all-elastic-waist-pull-up-shorts">
-        <div class="gallery-item-wrap">
-          <img class="gallery-item-img primary" src="images/SBU32 Khaki 1.jpeg" alt="Boys pull-on shorts khaki">
-          <img class="gallery-item-img secondary" src="images/SBU32 Khaki 2.jpeg" alt="Boys pull-on shorts khaki alternate">
+      <!-- PULL-ON SHORTS (SBU32) -->
+      <div class="gallery-item product-card">
+        <a class="product-card-link" href="https://www.unikusa.com/collections/uniform/products/boys-all-elastic-waist-pull-up-shorts">
+          <div class="gallery-item-wrap">
+            <img class="gallery-item-img primary" src="images/SBU32 Khaki 1.jpeg" alt="Boys pull-on shorts">
+          </div>
+        </a>
+        <div class="gallery-item-name">Pull-On Shorts · <span class="card-color-label">Khaki</span></div>
+        <div class="gallery-item-price">$16.99 · 6 colors · Sizes 4–16</div>
+        <div class="card-swatches">
+          <button class="card-swatch active" style="background:#C8B08A;" title="Khaki" data-img="images/SBU32 Khaki 1.jpeg" data-url="https://www.unikusa.com/collections/uniform/products/boys-all-elastic-waist-pull-up-shorts"></button>
+          <button class="card-swatch" style="background:#1B2A4A;" title="Navy" data-img="images/SBU32 Navy 1.jpeg" data-url="https://www.unikusa.com/collections/uniform/products/boys-all-elastic-waist-pull-up-shorts"></button>
+          <button class="card-swatch" style="background:#1A1A1A;" title="Black" data-img="images/SBU32 Black 1.jpeg" data-url="https://www.unikusa.com/collections/uniform/products/boys-all-elastic-waist-pull-up-shorts"></button>
+          <button class="card-swatch" style="background:#A0A0A0;" title="Grey" data-img="images/SBU32 Grey 1.jpeg" data-url="https://www.unikusa.com/collections/uniform/products/boys-all-elastic-waist-pull-up-shorts"></button>
+          <button class="card-swatch" style="background:#1B4D2E;" title="Hunter Green" data-img="images/SBU32 Hgreen 1.jpeg" data-url="https://www.unikusa.com/collections/uniform/products/boys-all-elastic-waist-pull-up-shorts"></button>
+          <button class="card-swatch" style="background:#3A6EA8;" title="Blue" data-img="images/SBU32 Blue 1.jpeg" data-url="https://www.unikusa.com/collections/uniform/products/boys-all-elastic-waist-pull-up-shorts"></button>
         </div>
-        <div class="gallery-item-name">Pull-On Shorts · Khaki</div>
-        <div class="gallery-item-price">$16.99</div>
-      </a>
+      </div>
 
-      <a class="gallery-item" href="https://www.unikusa.com/collections/uniform/products/boys-all-elastic-waist-pull-up-shorts">
-        <div class="gallery-item-wrap">
-          <img class="gallery-item-img primary" src="images/SBU32 Navy 1.jpeg" alt="Boys pull-on shorts navy">
-          <img class="gallery-item-img secondary" src="images/SBU32 Navy 2.jpeg" alt="Boys pull-on shorts navy alternate">
-        </div>
-        <div class="gallery-item-name">Pull-On Shorts · Navy</div>
-        <div class="gallery-item-price">$16.99</div>
-      </a>
-
-      <a class="gallery-item" href="https://www.unikusa.com/collections/uniform/products/boys-all-elastic-waist-pull-up-shorts">
-        <div class="gallery-item-wrap">
-          <img class="gallery-item-img primary" src="images/SBU32 Black 1.jpeg" alt="Boys pull-on shorts black">
-          <img class="gallery-item-img secondary" src="images/SBU32 Black 2.jpeg" alt="Boys pull-on shorts black alternate">
-        </div>
-        <div class="gallery-item-name">Pull-On Shorts · Black</div>
-        <div class="gallery-item-price">$16.99</div>
-      </a>
-
-      <a class="gallery-item" href="https://www.unikusa.com/collections/uniform/products/boys-all-elastic-waist-pull-up-shorts">
-        <div class="gallery-item-wrap">
-          <img class="gallery-item-img primary" src="images/SBU32 Grey 1.jpeg" alt="Boys pull-on shorts grey">
-          <img class="gallery-item-img secondary" src="images/SBU32 Grey 2.jpeg" alt="Boys pull-on shorts grey alternate">
-        </div>
-        <div class="gallery-item-name">Pull-On Shorts · Grey</div>
-        <div class="gallery-item-price">$16.99</div>
-      </a>
-
-      <a class="gallery-item" href="https://www.unikusa.com/collections/uniform/products/boys-all-elastic-waist-pull-up-shorts">
-        <div class="gallery-item-wrap">
-          <img class="gallery-item-img primary" src="images/SBU32 Hgreen 1.jpeg" alt="Boys pull-on shorts hunter green">
-          <img class="gallery-item-img secondary" src="images/SBU32 HGreen 2.jpeg" alt="Boys pull-on shorts hunter green alternate">
-        </div>
-        <div class="gallery-item-name">Pull-On Shorts · Hunter Green</div>
-        <div class="gallery-item-price">$16.99</div>
-      </a>
-
-      <a class="gallery-item" href="https://www.unikusa.com/collections/uniform/products/boys-all-elastic-waist-pull-up-shorts">
-        <div class="gallery-item-wrap">
-          <img class="gallery-item-img primary" src="images/SBU32 Blue 1.jpeg" alt="Boys pull-on shorts blue">
-          <img class="gallery-item-img secondary" src="images/SBU32 Blue 2.jpeg" alt="Boys pull-on shorts blue alternate">
-        </div>
-        <div class="gallery-item-name">Pull-On Shorts · Blue</div>
-        <div class="gallery-item-price">$16.99</div>
-      </a>
-
+      <!-- CARGO SHORTS (BCF22) -->
       <a class="gallery-item" href="https://www.unikusa.com/collections/uniform/products/boy-uniform-shorts-with-adjustable-waist-1">
         <div class="gallery-item-wrap">
           <img class="gallery-item-img primary" src="images/BCF22 Navy 1.jpeg" alt="Boys uniform cargo shorts navy">
@@ -1846,6 +1751,23 @@
       ease: 'power3.out'
     });
 
+
+    // ── COLOR SWATCH SWAP ──
+    document.querySelectorAll('.product-card').forEach(card => {
+      const img = card.querySelector('.gallery-item-img.primary');
+      const link = card.querySelector('.product-card-link');
+      const label = card.querySelector('.card-color-label');
+      card.querySelectorAll('.card-swatch').forEach(sw => {
+        sw.addEventListener('click', function(e) {
+          e.preventDefault();
+          if (this.dataset.img) img.src = this.dataset.img;
+          if (this.dataset.url && link) link.href = this.dataset.url;
+          if (label) label.textContent = this.title;
+          card.querySelectorAll('.card-swatch').forEach(s => s.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+    });
 
     // ── SCHOOL COUNTDOWN ──
     (function() {
