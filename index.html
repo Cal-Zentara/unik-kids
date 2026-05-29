@@ -33,10 +33,32 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    /* ── ANNOUNCEMENT BAR ── */
+    .announcement-bar {
+      position: sticky;
+      top: 0;
+      z-index: 101;
+      background: #0F0F0F;
+      color: #fff;
+      text-align: center;
+      padding: 12px 20px;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+
+    .announcement-bar strong {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #FFD100;
+      margin: 0 4px;
+      letter-spacing: -0.02em;
+    }
+
     /* ── NAV ── */
     nav {
       position: sticky;
-      top: 0;
+      top: 40px;
       z-index: 100;
       background: var(--accent);
       display: flex;
@@ -794,6 +816,11 @@
     <span style="color:#fff;">Only&nbsp;<span id="school-days" style="color:#FF5C35; font-size:1.125rem;">—</span>&nbsp;days until school</span>
     <span style="color:rgba(255,255,255,0.3);">·</span>
     <a href="https://www.unikusa.com/collections/uniform" style="color:#fff; text-decoration: none; font-weight: 900; border-bottom: 2px solid #FF5C35; padding-bottom: 1px; letter-spacing: 0.06em;">Shop Now →</a>
+  </div>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement-bar">
+    🎒 Back to School is in <strong id="school-days">--</strong> days — popular sizes sell out fast
   </div>
 
   <!-- NAV -->
