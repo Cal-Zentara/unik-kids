@@ -33,32 +33,10 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── ANNOUNCEMENT BAR ── */
-    .announcement-bar {
-      position: sticky;
-      top: 0;
-      z-index: 101;
-      background: #0F0F0F;
-      color: #fff;
-      text-align: center;
-      padding: 12px 20px;
-      font-size: 0.9375rem;
-      font-weight: 500;
-      letter-spacing: 0.01em;
-    }
-
-    .announcement-bar strong {
-      font-size: 1.5rem;
-      font-weight: 900;
-      color: #FFD100;
-      margin: 0 4px;
-      letter-spacing: -0.02em;
-    }
-
     /* ── NAV ── */
     nav {
       position: sticky;
-      top: 40px;
+      top: 0;
       z-index: 100;
       background: var(--accent);
       display: flex;
@@ -266,74 +244,6 @@
       font-size: 0.9375rem;
       font-weight: 700;
       color: var(--text-primary);
-    }
-
-    /* ── IMAGE PANELS ── */
-    .hero-kid {
-      background: #EBF6FC;
-      position: relative;
-      overflow: hidden;
-      animation: fadeIn 1s cubic-bezier(0.32, 0.72, 0, 1) both;
-      animation-delay: 0.1s;
-    }
-
-    @keyframes heroZoom {
-      from { transform: scale(1.07); }
-      to   { transform: scale(1.0);  }
-    }
-
-    .hero-slide {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 20%;
-      opacity: 0;
-      transition: opacity 0.9s ease;
-      animation: heroZoom 6s ease-out forwards;
-    }
-
-    .hero-slide.active {
-      opacity: 1;
-    }
-
-    .hero-badge {
-      position: absolute;
-      bottom: 40px;
-      left: 36px;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,0.6);
-      border-radius: 16px;
-      padding: 20px 24px;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-      animation: badgeIn 0.9s cubic-bezier(0.32, 0.72, 0, 1) both;
-      animation-delay: 0.5s;
-    }
-
-    .badge-label {
-      font-size: 0.625rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      margin-bottom: 6px;
-    }
-
-    .badge-value {
-      font-size: 1.875rem;
-      font-weight: 900;
-      letter-spacing: -0.04em;
-      color: var(--text-primary);
-      line-height: 1;
-    }
-
-    .badge-sub {
-      font-size: 0.8125rem;
-      color: var(--text-secondary);
-      margin-top: 5px;
     }
 
     /* ── PROOF STATS ── */
@@ -1008,11 +918,6 @@
     <span style="color:#fff;">Only&nbsp;<span id="school-days" style="color:#FF5C35; font-size:1.125rem;">—</span>&nbsp;days until school</span>
     <span style="color:rgba(255,255,255,0.3);">·</span>
     <a href="https://www.unikusa.com/collections/uniform" style="color:#fff; text-decoration: none; font-weight: 900; border-bottom: 2px solid #FF5C35; padding-bottom: 1px; letter-spacing: 0.06em;">Shop Now →</a>
-  </div>
-
-  <!-- ANNOUNCEMENT BAR -->
-  <div class="announcement-bar">
-    🎒 Back to School is in <strong id="school-days">--</strong> days — popular sizes sell out fast
   </div>
 
   <!-- NAV -->
