@@ -299,67 +299,6 @@
       margin-bottom: 32px;
     }
 
-    /* ── COLOR + SIZE BAR ── */
-    .uniform-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-      padding: 20px 24px;
-      background: #F6F6F6;
-      border-radius: 16px;
-      margin-bottom: 40px;
-    }
-
-    .uniform-bar-left {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .uniform-bar-label {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      white-space: nowrap;
-    }
-
-    .color-swatches {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .color-swatch {
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      border: 2px solid rgba(0,0,0,0.08);
-      cursor: default;
-      position: relative;
-      flex-shrink: 0;
-    }
-
-    .color-swatch[title]:hover::after {
-      content: attr(title);
-      position: absolute;
-      bottom: calc(100% + 6px);
-      left: 50%;
-      transform: translateX(-50%);
-      background: #0F0F0F;
-      color: #fff;
-      font-size: 0.6875rem;
-      font-weight: 600;
-      white-space: nowrap;
-      padding: 4px 8px;
-      border-radius: 6px;
-      pointer-events: none;
-    }
-
     .size-guide-btn {
       display: inline-flex;
       align-items: center;
@@ -1023,26 +962,6 @@
           <path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </a>
-    </div>
-
-    <!-- COLOR + SIZE BAR -->
-    <div class="uniform-bar">
-      <div class="uniform-bar-left">
-        <span class="uniform-bar-label">Polo Colors</span>
-        <div class="color-swatches">
-          <div class="color-swatch" style="background:#fff;border-color:rgba(0,0,0,0.18);" title="White"></div>
-          <div class="color-swatch" style="background:#1B2A4A;" title="Navy"></div>
-          <div class="color-swatch" style="background:#7BB8D4;" title="Sky Blue"></div>
-          <div class="color-swatch" style="background:#6D1A2A;" title="Burgundy"></div>
-          <div class="color-swatch" style="background:#1A1A1A;" title="Black"></div>
-          <div class="color-swatch" style="background:#C0202A;" title="Red"></div>
-          <div class="color-swatch" style="background:#A0A0A0;" title="Grey"></div>
-          <div class="color-swatch" style="background:#1B4D2E;" title="Hunter Green"></div>
-          <div class="color-swatch" style="background:#2256B0;" title="Royal Blue"></div>
-          <div class="color-swatch" style="background:#F5C100;" title="Gold"></div>
-        </div>
-        <span class="uniform-bar-label" style="margin-left:4px;">· Sizes 2/3–18</span>
-      </div>
       <button class="size-guide-btn" onclick="document.getElementById('sizeModal').classList.add('open')">
         📏 Size Guide
       </button>
@@ -1122,12 +1041,6 @@
           <path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </a>
-    </div>
-
-    <div class="uniform-bar">
-      <div class="uniform-bar-left">
-        <span class="uniform-bar-label">Tap a color on any item to preview it · Sizes 4–16</span>
-      </div>
       <button class="size-guide-btn" onclick="document.getElementById('sizeModal').classList.add('open')">
         📏 Size Guide
       </button>
