@@ -247,34 +247,16 @@
     }
 
     /* ── PROOF STATS ── */
-    /* ── PROMO BANNERS ── */
-    .promo-banners {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
+    /* ── BANNER BREAKS ── */
+    .banner-break {
       width: 100%;
-    }
-    .promo-banner-wide {
-      width: 100%;
-      display: block;
       line-height: 0;
+      display: block;
     }
-    .promo-banner-wide img {
+    .banner-break img {
       width: 100%;
       height: auto;
       display: block;
-    }
-    .promo-banner-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-    .promo-banner-row img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    @media (max-width: 640px) {
-      .promo-banner-row { grid-template-columns: 1fr; }
     }
 
     .proof {
@@ -977,17 +959,6 @@
     </div>
   </section>
 
-  <!-- PROMO BANNERS -->
-  <div class="promo-banners">
-    <div class="promo-banner-wide">
-      <img src="images/banner-2.jpeg" alt="Premium School Uniform - Back to School 2026">
-    </div>
-    <div class="promo-banner-row">
-      <img src="images/banner-3.jpeg" alt="Back to School - Free Shipping on all orders">
-      <img src="images/banner-4.jpeg" alt="Premium School Uniform collection">
-    </div>
-  </div>
-
   <!-- PROOF STATS -->
   <div class="proof">
     <div class="proof-grid">
@@ -1004,6 +975,11 @@
         <div class="proof-label">Years in the LA Fashion District</div>
       </div>
     </div>
+  </div>
+
+  <!-- BANNER BREAK 1 -->
+  <div class="banner-break">
+    <img src="images/banner-2.jpeg" alt="Premium School Uniform - Back to School 2026">
   </div>
 
   <!-- GALLERY SECTION -->
@@ -1375,6 +1351,11 @@
     </div>
   </section>
 
+  <!-- BANNER BREAK 2 -->
+  <div class="banner-break">
+    <img src="images/banner-3.jpeg" alt="Back to School - Free Shipping on all orders">
+  </div>
+
   <!-- JACKETS -->
   <section class="gallery" style="padding-top: 0;">
     <div class="gallery-header">
@@ -1669,6 +1650,11 @@
       </a>
     </div>
   </section>
+
+  <!-- BANNER BREAK 3 -->
+  <div class="banner-break">
+    <img src="images/banner-4.jpeg" alt="Premium School Uniform collection">
+  </div>
 
   <!-- WHY UNIK -->
   <section class="features">
