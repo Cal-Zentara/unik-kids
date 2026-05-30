@@ -247,6 +247,36 @@
     }
 
     /* ── PROOF STATS ── */
+    /* ── PROMO BANNERS ── */
+    .promo-banners {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+    }
+    .promo-banner-wide {
+      width: 100%;
+      display: block;
+      line-height: 0;
+    }
+    .promo-banner-wide img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .promo-banner-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .promo-banner-row img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    @media (max-width: 640px) {
+      .promo-banner-row { grid-template-columns: 1fr; }
+    }
+
     .proof {
       max-width: 1400px;
       margin: 0 auto;
@@ -946,6 +976,17 @@
       </div>
     </div>
   </section>
+
+  <!-- PROMO BANNERS -->
+  <div class="promo-banners">
+    <div class="promo-banner-wide">
+      <img src="images/banner-2.jpeg" alt="Premium School Uniform - Back to School 2026">
+    </div>
+    <div class="promo-banner-row">
+      <img src="images/banner-3.jpeg" alt="Back to School - Free Shipping on all orders">
+      <img src="images/banner-4.jpeg" alt="Premium School Uniform collection">
+    </div>
+  </div>
 
   <!-- PROOF STATS -->
   <div class="proof">
