@@ -2299,6 +2299,26 @@
     gsap.ticker.add((time) => lenis.raf(time * 1000));
     gsap.ticker.lagSmoothing(0);
 
+    // Recalculate scroll-reveal trigger positions AFTER every image loads.
+    // The galleries hold 200+ images with no fixed dimensions, so the page
+    // height keeps growing as they decode. Triggers created on script-run use
+    // stale (pre-image) positions and some never fire, leaving whole galleries
+    // stuck at opacity:0 (reads as "all the pictures are broken").
+    window.addEventListener('load', () => ScrollTrigger.refresh());
+    setTimeout(() => ScrollTrigger.refresh(), 1500);
+    // Final safety net: if anything is still invisible after 4s (slow network,
+    // a failed CDN, a missed trigger), force it visible so the page can never
+    // look broken. Animations still run normally for everyone else.
+    setTimeout(() => {
+      document.querySelectorAll(
+        '.gallery-item, .proof-item, .feature-item, .review-card, .gallery-header, .features-header, .reviews-header, .gallery-cta, .cta-dark-inner'
+      ).forEach(el => {
+        if (parseFloat(getComputedStyle(el).opacity) < 0.05) {
+          gsap.set(el, { opacity: 1, y: 0, clearProps: 'transform' });
+        }
+      });
+    }, 4000);
+
     // ── HERO VIDEO PARALLAX ──
     gsap.to('.hero-video', {
       scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1.8 },
