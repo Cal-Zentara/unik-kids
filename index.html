@@ -2400,7 +2400,12 @@
       card.querySelectorAll('.card-swatch').forEach(sw => {
         sw.addEventListener('click', function(e) {
           e.preventDefault();
-          if (this.dataset.img) img.src = this.dataset.img;
+          if (this.dataset.img) {
+            img.src = this.dataset.img;
+            // keep hover image in sync with selected color
+            const secondary = card.querySelector('.gallery-item-img.secondary');
+            if (secondary) secondary.src = this.dataset.img;
+          }
           if (this.dataset.url && link) link.href = this.dataset.url;
           if (label) label.textContent = this.title;
           card.querySelectorAll('.card-swatch').forEach(s => s.classList.remove('active'));
